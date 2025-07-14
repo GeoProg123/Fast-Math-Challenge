@@ -57,6 +57,21 @@ body {
   margin: 0;
 }
 
+.container input[type="button"]:focus {
+  border: none;
+}
+
+.container input[type="button"] {
+  color: inherit;
+  background-color: #fa812f;
+  transition: all 0.3s ease;
+}
+
+.container input[type="button"]:hover {
+  transform: scale(1.1);
+  border: #000 dashed 2px;
+}
+
 #status {
   font-size: 1.3rem;
   text-align: center;
