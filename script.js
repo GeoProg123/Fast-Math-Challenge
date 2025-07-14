@@ -50,7 +50,7 @@ function loselife(reason = "Wrong Answer!", fromTimer = false) {
   if (life <= 0) {
     clearInterval(countdown);
     QuestionEl.innerText = `Game Over. Score = ${score}`;
-    statusEl.innerText = '💀You Died';
+    statusEl.innerText = "💀You Died";
     AnswerEl.disabled = false;
     AnswerEl.type = "button";
     AnswerEl.value = "Do You want play again?";
@@ -96,12 +96,17 @@ function generatorQuestion() {
       correctAnswer = num1 + num2;
       break;
     case "-":
+      if (num1 < num2) [num1, num2] = [num2, num1];
       correctAnswer = num1 - num2;
       break;
     case "*":
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
       correctAnswer = num1 * num2;
       break;
     case "/":
+      num2 = Math.floor(Math.random() * 10) + 1;
+      num1 = num2 * Math.floor(Math.random() * 10) + 1; // hasil bulat
       correctAnswer = num1 / num2;
       break;
   }
